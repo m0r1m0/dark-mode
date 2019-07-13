@@ -3,8 +3,27 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import ThemeProvider from './components/ThemeProvider';
+import { Global, css } from '@emotion/core';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+  <ThemeProvider>
+    <Global
+      styles={css`
+        html,
+        body,
+        #root {
+          height: 100%;
+        }
+        p {
+          margin-top: 0;
+        }
+      `}
+    />
+    <App />
+  </ThemeProvider>,
+  document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
