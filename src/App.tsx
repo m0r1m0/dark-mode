@@ -5,7 +5,6 @@ import styled from './components/styled';
 
 const App: React.FC = () => {
   const { colorMode, setColorMode } = useTheme();
-  console.log('render: App');
   return (
     <Container>
       <p>current color mode: {colorMode}</p>
